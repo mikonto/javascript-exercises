@@ -1,17 +1,10 @@
 const palindromes = function (text) {
-    let noCaps = text.toLowerCase(); 
-   
-    regex = /[a-z]/g;
-    let onlyLettersArray = noCaps.match(regex);
+    let noCaps = text.toLowerCase(); // everything into lowercase
+    let onlyLettersArray = noCaps.match(/[a-z]/g); // makes a new array from letters only
+    let onlyLetters = onlyLettersArray.join(""); // makes a string from the array
+    let reversed = onlyLetters.split("").reverse().join(""); // reverses the string
     
-    
-    let onlyLetters = onlyLettersArray.join("");
-  
-    let reversed = onlyLetters.split("").reverse().join("");
-      console.log(reversed); // TEST
-      console.log(text); // TEST
-    
-    if (reversed === onlyLetters) {
+    if (reversed === onlyLetters) { // compares reversed string with non reversed string
       return true
       }
     
